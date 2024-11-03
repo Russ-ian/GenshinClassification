@@ -20,8 +20,8 @@ app.use( cors() )
 
 
 // No express.static() for public files
-app.use( express.static( `${ __dirname }\\views` ) ) // Set static directory in vies for css, js files
-app.set( 'views', `${ __dirname }\\views` )
+app.use( express.static( `${ __dirname }/views` ) ) // Set static directory in vies for css, js files
+app.set( 'views', `${ __dirname }/views` )
 app.set( 'view engine', 'ejs' )
 
 const connection = mongoose.connect( config.mongoURL )
