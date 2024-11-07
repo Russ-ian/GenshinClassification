@@ -35,7 +35,7 @@ class charactersManager extends manager {
         if ( !characterQuery ) return 'Character not found'
         if ( !characterQuery?.tags.some( tagObj => tagObj.name.name == tag ) ) return 'Tag not found in the character' // tagObj.name.name, double name because name is populated
 
-        characterQuery.tags = characterQuery.tags.filter( tag => tag.name.toString() !== tagInfo._id.toString() ) // tag.name and tagInfo._id are both ObjectId()
+        characterQuery.tags = characterQuery.tags.filter( tag => tag.name._id.toString() !== tagInfo._id.toString() ) // tag.name and tagInfo._id are both ObjectId()
         return await characterQuery.save()
     }
 }
