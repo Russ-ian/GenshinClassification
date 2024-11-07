@@ -6,7 +6,7 @@ class charactersRouter extends BaseRouter {
         this.get( '/', async function ( req, res, next ) {
             const response = await charactersManager.getCharacters()
             res.sendSuccess( response )
-        }
+        } )
         this.post( '/', async function ( req, res, next ) {  // Insert a tag to a character
             const { character, tag, value, description } = req.body
 
